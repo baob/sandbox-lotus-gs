@@ -26,4 +26,6 @@ guard :minitest, all_on_start: true, all_after_pass: true do
   watch(%r{^lib/(.+)\.rb$})         { |m| "spec/#{m[1]}_spec.rb" }
   watch(%r{^spec/spec_helper\.rb$}) { 'spec' }
 
+  watch(%r{^apps/web/config/routes.rb$}) { 'spec/web' }
+
 end
