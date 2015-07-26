@@ -70,5 +70,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 
   config.include Capybara::DSL
+
+  config.expect_with(:rspec) { |c| c.syntax = :should }
 end
 
