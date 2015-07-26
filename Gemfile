@@ -10,12 +10,11 @@ gem 'lotus-model',   '~> 0.4'
 gem 'pg'
 
 group :test do
-  gem 'minitest'
-  gem 'minitest-reporters'
+  gem 'rspec'
   gem 'capybara'
   gem 'pry'
   gem 'guard'
-  gem 'guard-minitest'
+  gem 'guard-rspec'
   gem 'terminal-notifier-guard'
 end
 
