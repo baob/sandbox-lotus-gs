@@ -7,6 +7,6 @@ describe Web::Controllers::Books::Index do
 
   it "is successful" do
     response = action.call(params)
-    response[0].must_equal 200
+    response[0].should eql 200
   end
 end

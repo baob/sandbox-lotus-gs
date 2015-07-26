@@ -17,7 +17,7 @@ describe Web::Views::Books::New do
     let(:exposures) { Hash[foo: 'bar'] }
 
     it "exposes #foo" do
-      view.foo.must_equal exposures.fetch(:foo)
+      view.foo.should eql exposures.fetch(:foo)
     end
 
   end
@@ -29,8 +29,8 @@ describe Web::Views::Books::New do
     it 'displays list of errors' do
       params.valid? # trigger validations
 
-      rendered.must_include('There was a problem with your submission')
-      rendered.must_include('title is required')
+      rendered.should include('There was a problem with your submission')
+      rendered.should include('title is required')
     end
   end
 end

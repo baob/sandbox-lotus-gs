@@ -8,12 +8,12 @@ describe Web::Views::Books::Index do
   let(:rendered)  { view.render }
 
   it "exposes #books" do
-    view.books.must_equal exposures.fetch(:books)
+    view.books.should eql exposures.fetch(:books)
   end
 
   describe 'when there are no books' do
     it 'shows a placeholder message' do
-      rendered.must_include('<p class="placeholder">There are no books yet.</p>')
+      rendered.should include('<p class="placeholder">There are no books yet.</p>')
     end
   end
 
@@ -23,13 +23,13 @@ describe Web::Views::Books::Index do
     let(:exposures) { Hash[books: [book1, book2]] }
 
     it 'lists them all' do
-      rendered.scan(/class="book"/).count.must_equal 2
-      rendered.must_include('Refactoring')
-      rendered.must_include('Domain Driven Design')
+      rendered.scan(/class="book"/).count.should eql 2
+      rendered.should include('Refactoring')
+      rendered.should include('Domain Driven Design')
     end
 
     it 'hides the placeholder message' do
-      view.render.wont_include('<p class="placeholder">There are no books yet.</p>')
+      view.render.should_not include('<p class="placeholder">There are no books yet.</p>')
     end
   end
 end

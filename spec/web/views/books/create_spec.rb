@@ -8,6 +8,6 @@ describe Web::Views::Books::Create do
   let(:rendered)  { view.render }
 
   it "exposes #foo" do
-    view.foo.must_equal exposures.fetch(:foo)
+    view.foo.should eql exposures.fetch(:foo)
   end
 end

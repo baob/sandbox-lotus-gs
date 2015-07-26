@@ -13,14 +13,14 @@ describe Web::Controllers::Books::Create do
 
     it 'creates a new book' do
       action.call(params)
-      action.book.id.wont_be_nil
+      action.book.id.should_not be_nil
     end
 
     it 'redirects the user to the books listing' do
       response = action.call(params)
 
-      response[0].must_equal 302
-      response[1]['Location'].must_equal '/books'
+      response[0].should eql 302
+      response[1]['Location'].should eql '/books'
     end
   end
 
@@ -29,7 +29,7 @@ describe Web::Controllers::Books::Create do
 
     it 're-renders the books#new view' do
       response = action.call(params)
-      response[0].must_equal 200
+      response[0].should eql 200
     end
   end
 end

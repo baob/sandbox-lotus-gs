@@ -15,7 +15,7 @@ describe 'Books' do
       click_button 'Create'
     end
 
-    current_path.must_equal('/books')
+    current_path.should eql('/books')
     assert page.has_content?('New book')
   end
 end
