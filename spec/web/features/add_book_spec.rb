@@ -1,6 +1,6 @@
 require 'features_helper'
 
-describe 'Books' do
+describe 'Feature - Books' do
   after do
     BookRepository.clear
   end
