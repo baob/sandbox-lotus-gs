@@ -71,6 +71,6 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
-  config.expect_with(:rspec) { |c| c.syntax = :should }
+  config.expect_with(:rspec) { |c| c.syntax = [:should, :expect] }
 end
 

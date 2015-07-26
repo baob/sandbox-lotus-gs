@@ -16,6 +16,6 @@ describe 'Books' do
     end
 
     current_path.should eql('/books')
-    assert page.has_content?('New book')
+    expect(page).to have_content('New book')
   end
 end
